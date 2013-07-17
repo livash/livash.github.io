@@ -177,12 +177,28 @@ a:active {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
+
+/* Custom, by olena  */
+h1:hover {
+	color: lightblue;
+}
+
+h2:hover {
+	color: orange;
+}
+
+h4:hover {
+	color: orange;
+}
+
+/*  */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 h2 {
+  color: blue;
   font-size: 1.5em;
   margin: 0.83em 0;
 }
