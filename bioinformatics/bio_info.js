@@ -12,11 +12,11 @@ window.Bioinformatics.Functions = {
 			results_hash[basesArray[i]]++;
 		}
 		resultsJson = [
-								{'base': 'Total', 'count': seq.length, 'percent': 100, 'color': 'blue'},
-								{'base': 'A', 'count': results_hash['A'], 'percent': (results_hash['A']/basesArray.length * 100).toFixed(1), 'color': '#FF0000'},
-								{'base': 'T', 'count': results_hash['T'], 'percent': (results_hash['T']/basesArray.length * 100).toFixed(1), 'color': '#D7DF01'},
-								{'base': 'G', 'count': results_hash['G'], 'percent': (results_hash['G']/basesArray.length * 100).toFixed(1), 'color': '#01DF3A'},
-								{'base': 'C', 'count': results_hash['C'], 'percent': (results_hash['C']/basesArray.length * 100).toFixed(1), 'color': '#FF00FF'}
+			{'base': 'Total', 'count': seq.length, 'percent': 100, 'color': 'blue'},
+			{'base': 'A', 'count': results_hash['A'], 'percent': (results_hash['A']/basesArray.length * 100).toFixed(1), 'color': '#FF0000'},
+			{'base': 'T', 'count': results_hash['T'], 'percent': (results_hash['T']/basesArray.length * 100).toFixed(1), 'color': '#D7DF01'},
+			{'base': 'G', 'count': results_hash['G'], 'percent': (results_hash['G']/basesArray.length * 100).toFixed(1), 'color': '#01DF3A'},
+			{'base': 'C', 'count': results_hash['C'], 'percent': (results_hash['C']/basesArray.length * 100).toFixed(1), 'color': '#FF00FF'}
 		];
 		
 		return resultsJson;

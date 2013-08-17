@@ -24,16 +24,16 @@ window.Bioinformatics.UI = {
 		var svg = Bioinformatics.UI.makeSvg(rootEl, '#D8D8D8');
 		var barGraph = svg.selectAll('rect').data(jsonData).enter().append('rect');
 		var barGraphStyles = barGraph.attr('x', 100)
-																 .attr('y', function(d, i) { return i * 20 + 10; })
-																 .attr('height', 15)
-																 .attr('width', function(d, i) { return d.count; })
-																 .style('fill', function(d) { return d.color; });
+			 .attr('y', function(d, i) { return i * 20 + 10; })
+			 .attr('height', 15)
+			 .attr('width', function(d, i) { return d.count; })
+			 .style('fill', function(d) { return d.color; });
 		var barGraphText = svg.selectAll('text').data(jsonData).enter().append('text')
-													.attr('x', 10)
-													.attr('y', function(d, i) { return i * 19 + 23; })
-													.attr('font-family', 'sans-serif')
-													.attr('font-size', '12px')
-													.text(function(d){ return d.base + ": " + d.percent + "%"; });
+			.attr('x', 10)
+			.attr('y', function(d, i) { return i * 19 + 23; })
+			.attr('font-family', 'sans-serif')
+			.attr('font-size', '12px')
+			.text(function(d){ return d.base + ": " + d.percent + "%"; });
 	},
 	
 	makeSvg: function(rootEl, color) {
