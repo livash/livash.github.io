@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="underscore.js"></script>
+	<script type="text/javascript" src="backbone.js"></script>
+	<script type="text/javascript" src="d3.v3.min.js"></script>
+	<script type="text/javascript" src="bio_info.js"></script>
+	<script type="text/javascript" src="bio_info_ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="bioinformatics.css">
+</head>
+<body>
+	<h1>Bioinformatics examples:</h1>
+	<div class="dna-sequence-content">
+		<h2>Calculate percent-content of each base in a DNA sequence</h2>
+		<div>Use one of the example sequences or your own DNA sequence. Insert sequence into text area below and press "Submit".</div>
+		<div>
+			Example sequence 1: <span class='sequence'>ATGCATGC</span></br>
+			Example sequence 2: <span class='sequence'>AAAAAAAAAAAAAAAAATTTTTTTTTTTTCCCCCCCCCGGGGGG</span>
+		</div>
+		<form id="count-bases-form-id">
+			<textarea id="count-bases-textarea-id" rows="4" cols="50" placeholder="Insert DNA sequence here"></textarea>
+			<br />
+			<input type="submit" value="Submit"></input>
+		</form>
+		<br>
+	</div>
+	
+</body>
+</html>
