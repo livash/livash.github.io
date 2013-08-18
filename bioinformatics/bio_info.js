@@ -54,6 +54,9 @@ window.Bioinformatics.Functions = {
 				case "C": 
 					counter++;
 					break;
+				case " ":
+					counter++;
+					break;
 				default:
 			}
 		});

@@ -1,6 +1,9 @@
-.sequence {
-	color: blue;
+body {
+	background: #A9F5E1;
 }
 h2 {
 	color: #585858;
+}
+.sequence {
+	color: blue;
 }
