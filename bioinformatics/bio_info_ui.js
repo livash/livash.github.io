@@ -3,14 +3,27 @@ window.Bioinformatics.UI = {
 		console.log("in the UI class");
 		$("#count-bases-form-id").submit(function(event) {
 			event.preventDefault();
+			$(".error-counts").remove();
+			$(".svg-counts").remove();
 			var dnaSeq = $('#count-bases-textarea-id').val();
-			//check whether input is a correct string with only ATGC present
-			var processedDnaSeq = Bioinformatics.Functions.processSequence(dnaSeq);
-			// convert DNA seqeunce into hash of counts
-			var baseCountsJson = Bioinformatics.Functions.calculateBaseContent(dnaSeq);
-			console.log(baseCountsJson);
-			var barGraph = Bioinformatics.UI.drawBaseCountsGraph(baseCountsJson, 'body');
+			//check whether input is a correct string with only A,T,G, or C present
+			if (Bioinformatics.Functions.isValidSequence(dnaSeq)) {
+				var baseCountsJson = Bioinformatics.Functions.calculateBaseContent(dnaSeq);
+				var barGraph = Bioinformatics.UI.drawBaseCountsGraph(baseCountsJson, '.dna-sequence-content');
+			} else {
+				//generate error message
+				var error = Bioinformatics.UI.showError('.dna-sequence-content');
+			}
 		});
+	},
+	
+	showError: function(rootEl) {
+		var svg = Bioinformatics.UI.makeSvg(rootEl, '#D8D8D8');
+		svg.attr('class', 'error-counts');
+		var messageLine1 = svg.append('text').attr('x', 10).attr('y', 40).attr('font-size', '14px').style('fill', 'red');
+		messageLine1.text("DNA sequence should contain only A, a, T, t, G, g, C, or c. ")
+		var messageLine2 = svg.append('text').attr('x', 10).attr('y', 80).attr('font-size', '14px').style('fill', 'red');
+		messageLine2.text("Try inputting your DNA sequence again.")
 	},
 	
 	drawBaseCountsGraph: function(jsonData, rootEl) {
@@ -22,6 +35,7 @@ window.Bioinformatics.UI = {
 		};
 		//draw data on a graph
 		var svg = Bioinformatics.UI.makeSvg(rootEl, '#D8D8D8');
+		svg.attr('class', 'svg-counts');
 		var barGraph = svg.selectAll('rect').data(jsonData).enter().append('rect');
 		var barGraphStyles = barGraph.attr('x', 100)
 			 .attr('y', function(d, i) { return i * 20 + 10; })
