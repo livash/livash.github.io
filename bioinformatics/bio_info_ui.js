@@ -29,8 +29,6 @@ window.Bio.UI = {
 				//translate
 				var proteinSeq = Bio.Functions.translateDnaToProtein(dnaSeq);
 				//display
-				////////////////////////
-				// add code here.............
 				Bio.UI.displayProteinSequence(proteinSeq, '.translate-dna-to-protein');				
 			} else {
 				//generate error message
@@ -41,7 +39,8 @@ window.Bio.UI = {
 	
 	displayProteinSequence: function(seq, rootEl) {
 		var div = $('<div>').addClass('protein-sequence').text(seq);
-		
+		var p = $('<p>').text("protein length: " + (seq.length - 1) + " aa");
+		$(div).append(p);
 		$(rootEl).append(div);
 	},
 	
