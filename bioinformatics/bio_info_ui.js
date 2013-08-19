@@ -1,25 +1,53 @@
-window.Bioinformatics.UI = {
+window.Bio.UI = {
 	submitForCount: function(){
-		console.log("in the UI class");
+		console.log("counting...");
 		$("#count-bases-form-id").submit(function(event) {
 			event.preventDefault();
 			$(".error-counts").remove();
 			$(".svg-counts").remove();
 			var dnaSeq = $('#count-bases-textarea-id').val();
 			//check whether input is a correct string with only A,T,G, or C present
-			if (Bioinformatics.Functions.isValidSequence(dnaSeq)) {
-				var baseCountsJson = Bioinformatics.Functions.calculateBaseContent(dnaSeq);
-				var barGraph = Bioinformatics.UI.drawBaseCountsGraph(baseCountsJson, '.dna-sequence-content');
+			if (Bio.Functions.isValidSequence(dnaSeq)) {
+				var baseCountsJson = Bio.Functions.calculateBaseContent(dnaSeq);
+				var barGraph = Bio.UI.drawBaseCountsGraph(baseCountsJson, '.dna-sequence-content');
 			} else {
 				//generate error message
-				var error = Bioinformatics.UI.showError('.dna-sequence-content');
+				var error = Bio.UI.showError('.dna-sequence-content', 'error-counts');
 			}
 		});
 	},
 	
-	showError: function(rootEl) {
-		var svg = Bioinformatics.UI.makeSvg(rootEl, '#D8D8D8');
-		svg.attr('class', 'error-counts');
+	submitForTranslation: function(){
+		console.log("translating ....");
+		$("#translate-dna-to-protein-form-id").submit(function(event){
+			event.preventDefault();
+			$(".error-translate").remove();
+			$(".protein-sequence").remove();
+			var dnaSeq = $("#translate-dna-to-protein-textarea-id").val();
+			console.log(dnaSeq);
+			if (Bio.Functions.isValidSequence(dnaSeq)) {
+				//translate
+				var proteinSeq = Bio.Functions.translateDnaToProtein(dnaSeq);
+				//display
+				////////////////////////
+				// add code here.............
+				Bio.UI.displayProteinSequence(proteinSeq, '.translate-dna-to-protein');				
+			} else {
+				//generate error message
+				var error = Bio.UI.showError('.translate-dna-to-protein', 'error-translate');
+			}
+		})
+	},
+	
+	displayProteinSequence: function(seq, rootEl) {
+		var div = $('<div>').addClass('protein-sequence').text(seq);
+		
+		$(rootEl).append(div);
+	},
+	
+	showError: function(rootEl, errorClass) {
+		var svg = Bio.UI.makeSvg(rootEl, '#D8D8D8');
+		svg.attr('class', errorClass);
 		var messageLine1 = svg.append('text').attr('x', 10).attr('y', 40).attr('font-size', '14px').style('fill', 'red');
 		messageLine1.text("DNA sequence should contain only A, a, T, t, G, g, C, or c. ")
 		var messageLine2 = svg.append('text').attr('x', 10).attr('y', 80).attr('font-size', '14px').style('fill', 'red');
@@ -34,7 +62,7 @@ window.Bioinformatics.UI = {
 			jsonData[i]['count'] = linearScale(jsonData[i]['count']);
 		};
 		//draw data on a graph
-		var svg = Bioinformatics.UI.makeSvg(rootEl, '#D8D8D8');
+		var svg = Bio.UI.makeSvg(rootEl, '#D8D8D8');
 		svg.attr('class', 'svg-counts');
 		var barGraph = svg.selectAll('rect').data(jsonData).enter().append('rect');
 		var barGraphStyles = barGraph.attr('x', 100)

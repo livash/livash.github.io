@@ -27,7 +27,33 @@
 	</div>
 	<div class="tech-features">
 		<h5>Technical features:</h5>
-		This analysis program was written in JavaScript. Vizualization of the analysis results is done using D3.JS. <a href="https://github.com/livash/livash.github.io/blob/master/bioinformatics/bio_info.js">View source code here.</a>
+		This analysis program was written in JavaScript. Visualization of the analysis results is done using D3.JS. <a href="https://github.com/livash/livash.github.io/blob/master/bioinformatics/bio_info.js">View source code here.</a>
+	</div>
+	<hr noshade size=3>
+	<div class="translate-dna-to-protein">
+		<h2>2. Translate DNA sequence to a protein sequence</h2>
+		<div>Use one of the example sequences or your own DNA sequence. Copy and paste sequence into text area below and press "Submit".</div>
+		<div>
+			Example sequence 1: <span class='sequence'>ATGCAT</span></br>
+			Example sequence 2: Human Bax, alpha-isoform, mRNA <span class="bax-sequence"></span><a href="http://www.ncbi.nlm.nih.gov/nuccore/L22473.1#slash_388165">NCBI source</a>
+			<div class="mRNA-sequence">
+				<span class="line">    1 atggacgggt ccggggagca gcccagaggc ggggggccca ccagctctga gcagatcatg</span><br>
+	      <span class="line">  61 aagacagggg cccttttgct tcagggtttc atccaggatc gagcagggcg aatggggggg</span><br>
+	      <span class="line">121 gaggcacccg agctggccct ggacccggtg cctcaggatg cgtccaccaa gaagctgagc</span><br>
+	      <span class="line">181 gagtgtctca agcgcatcgg ggacgaactg gacagtaaca tggagctgca gaggatgatt</span><br>
+	      <span class="line">241 gccgccgtgg acacagactc cccccgagag gtctttttcc gagtggcagc tgacatgttt</span><br>
+	      <span class="line">301 tctgacggca acttcaactg gggccgggtt gtcgcccttt tctactttgc cagcaaactg</span><br>
+	      <span class="line">361 gtgctcaagg ccctgtgcac caaggtgccg gaactgatca gaaccatcat gggctggaca</span><br>
+	      <span class="line">421 ttggacttcc tccgggagcg gctgttgggc tggatccaag accagggtgg ttgggacggc</span><br>
+	      <span class="line">481 ctcctctcct actttgggac gcccacgtgg cagaccgtga ccatctttgt ggcgggagtg</span><br>
+	      <span class="line">541 ctcaccgcct cgctcaccat ctggaagaag atgggctga</span><br>
+			</div>
+		</div>
+		<form id="translate-dna-to-protein-form-id">
+			<textarea id="translate-dna-to-protein-textarea-id" rows="4" cols="62" palceholder="Insert DNA seqeunce here"></textarea>
+			<br>
+			<input type="submit" value="Translate"></input>
+		</form>
 	</div>
 	
 </body>

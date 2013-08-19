@@ -1,9 +1,30 @@
 body {
 	background: #A9F5E1;
+	margin-left: 2%;
+	margin-right: 2%;
 }
 h2 {
 	color: #585858;
 }
 .sequence {
 	color: blue;
+}
+.protein-sequence {
+	word-wrap: break-word;
+	width: 400px;
+	min-height: 100px;
+	background: #D8D8D8;
+}
+.mRNA-sequence {
+	word-wrap: break-word;
+	width: 460px;
+	background: #F5F6CE;
+}
+.line {
+	font-family: mono-space, sefir;
+	white-space: pre-wrap;
+	font-size: 13px;
+	margin: 1em 0px;
+	line-height: 1.3em;
+	text-align: left;
 }
