@@ -1,3 +1,6 @@
+a, .blue-link {
+	color: #58ACFA;
+}
 @font-face {
   font-family: 'OpenSansLight';
   src: url("../fonts/OpenSans-Light-webfont.eot");

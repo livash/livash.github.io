@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript" src="jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="keymaster-master/keymaster.min.js"></script>
+  <script type="text/javascript" src="app.js"> </script>
+	<script type="text/javascript" src="moving_object.js"> </script>
+	<script type="text/javascript" src="asteroid.js"> </script>
+	<script type="text/javascript" src="ship.js"> </script>
+	<script type="text/javascript" src="bullet.js"> </script>
+	<script type="text/javascript" src="game.js"> </script>
+	<link link rel="stylesheet" type="text/css" href="asteroids.css"></link>
+</head>
+
+<body>
+	<h1> Welcome to the Asteroids game</h1>
+	<div class="game-window">
+		<div class="empty-game-window">
+			<img id="asteroid-image"src="images/Asteroid460.gif"></img>
+		</div>
+	</div>
+	<div class="directions">
+		<button id="start">Start the Game</button>
+		<h3>How to play:</h3>
+		<ul>
+			<li>Use up, down, left and right key to move the ship;</li>
+			<img id="keys_01" src="images/keys.png" alt="keys" ></img>
+			<li>Use space bar to fire bullets;</li>
+			<br>
+			<img id="keys_02" src="images/space_bar.jpeg" alt="keys" ></img>
+			<br>
+			<li>"Score" keeps track of the number of destroyed asteroids.</li>
+			<li>Game is over once the ship collides with an asteroid.</li>
+			<li>Press "Start" to start the Game.</li>
+		</ul>
+		<h3>Technical Features:</h3>
+		<ul>
+			<li>Game written in JavaScript <a href="https://github.com/livash/Asteroids">GitHub</a></li>
+			<li>HTML5 canvas</li>
+		</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+.game-window {
+	width: 50%;
+	margin-left: 2%;
+	float: left;
+}
+.empty-game-window {
+	width: 500px;
+	height: 500px;
+	background-color: #BDBDBD;
+}
+
+.directions {
+	width: 40%;
+	float: right;
+}
+#keys_01, #keys_02 {
+	width: 150px;
+	margin-left: 20%;
+}
+#start {
+	color: blue;
+	font-size: 20px;
+	font-weight: bold;
+}
+h1 {
+	color: #DF7401;
+	margin-left: 2%;
+}
+body {
+	background: #F5DA81;
+}
+#asteroid-image {
+	width: 500px;
+	height: 500px;
+}
+
